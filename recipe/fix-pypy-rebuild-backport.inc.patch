@@ -1,0 +1,16 @@
+--- Modules/_sha3/backport.inc    2023-12-10 15:05:27.160407088 -0600
++++ Modules/_sha3/backport.inc        2023-12-10 15:05:30.872443817 -0600
+@@ -30,6 +30,7 @@
+ #endif
+ #endif
+
++#if !defined(_Py_strhex)
+ static PyObject*
+ _Py_strhex(const char* argbuf, const Py_ssize_t arglen)
+ {
+@@ -73,4 +74,4 @@
+
+     return retval;
+ }
+-
++#endif
