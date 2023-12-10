@@ -8,10 +8,12 @@ package:
 source:
   url: https://github.com/5afe/pysha3/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 0398e0b98573d93c81318073c2d2c2426a6d02b4bca85ef483c4276bdda3378c
+  patches:
+    - fix-py3.12-removed-failIf.patch
 
 build:
   script: {{ PYTHON }} -m pip install . -vvv
-  number: 0
+  number: 1
   skip: true  # [py==38]
 
 requirements:
