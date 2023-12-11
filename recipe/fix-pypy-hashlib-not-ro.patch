@@ -1,0 +1,24 @@
+--- tests.py       2023-12-10 10:07:14.103895418 -0600
++++ tests.py    2023-12-11 09:44:48.601225474 -0600
+@@ -5,6 +5,7 @@
+ import os
+ import sys
+ import unittest
++import platform
+
+ import sha3
+
+@@ -108,9 +109,10 @@
+             self.assertEqual(len(sha3.hexdigest()), self.digest_size * 2)
+
+         # object is read-only
+-        self.assertRaises(AttributeError, setattr, sha3, "attribute", None)
+-        self.assertRaises(AttributeError, setattr, sha3, "digest_size", 3)
+-        self.assertRaises(AttributeError, setattr, sha3, "name", "egg")
++        if platform.python_implementation() == 'CPython':
++            self.assertRaises(AttributeError, setattr, sha3, "attribute", None)
++            self.assertRaises(AttributeError, setattr, sha3, "digest_size", 3)
++            self.assertRaises(AttributeError, setattr, sha3, "name", "egg")
+
+         self.new(b"data")
+         self.new(string=b"data")

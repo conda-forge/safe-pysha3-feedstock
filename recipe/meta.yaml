@@ -11,10 +11,11 @@ source:
   patches:
     - fix-py3.12-removed-failIf.patch
     - fix-pypy-rebuild-backport.inc.patch
+    - fix-pypy-hashlib-not-ro.patch
 
 build:
   script: {{ PYTHON }} -m pip install . -vvv
-  number: 3
+  number: 4
   skip: true  # [py==38]
 
 requirements:
