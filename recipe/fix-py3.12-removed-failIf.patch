@@ -1,0 +1,11 @@
+--- tests.py        2023-12-10 10:07:14.103895418 -0600
++++ tests.py    2023-12-10 09:48:05.109629681 -0600
+@@ -172,7 +172,7 @@
+
+ class BaseKeccakTests(BaseSHA3Tests):
+     def test_hashlib(self):
+-        self.failIf(hasattr(hashlib, self.name))
++        self.assertFalse(hasattr(hashlib, self.name))
+
+
+ class BaseShakeTests(BaseSHA3Tests):
