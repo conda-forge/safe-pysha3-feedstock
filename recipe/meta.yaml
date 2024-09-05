@@ -15,12 +15,13 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vvv
-  number: 5
+  number: 6
   skip: true  # [py==38]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
