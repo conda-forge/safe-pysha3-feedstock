@@ -15,27 +15,29 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vvv
-  number: 5
+  number: 6
   skip: true  # [py==38]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
+    - setuptools
   run:
     - python
 
 test:
   imports:
     - sha3
-  source_files:
-    - tests.py
-    - vectors/
+  source_files:  # [py<313]
+    - tests.py  # [py<313]
+    - vectors/  # [py<313]
   commands:
     - pip check
-    - python tests.py
+    - python tests.py  # [py<313]
   requires:
     - pip
 
