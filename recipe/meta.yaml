@@ -32,12 +32,12 @@ requirements:
 test:
   imports:
     - sha3
-  source_files:
-    - tests.py
-    - vectors/
+  source_files:  # [py<313]
+    - tests.py  # [py<313]
+    - vectors/  # [py<313]
   commands:
     - pip check
-    - python tests.py
+    - python tests.py  # [py<313]
   requires:
     - pip
 
