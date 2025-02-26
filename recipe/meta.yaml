@@ -42,6 +42,7 @@ test:
     - python tests.py  # [py<313]
   requires:
     - pip
+    - python
 
 about:
   home: https://github.com/5afe/pysha3
