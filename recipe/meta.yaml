@@ -15,7 +15,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vvv
-  number: 6
+  number: 7
   skip: true  # [py==38]
 
 requirements:
