@@ -1,5 +1,5 @@
 {% set name = "safe-pysha3" %}
-{% set version = "1.0.4" %}
+{% set version = "1.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/5afe/pysha3/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 0398e0b98573d93c81318073c2d2c2426a6d02b4bca85ef483c4276bdda3378c
+  sha256: 27cfcf535169e05f839d1f1e6fdf69fdde1164f8f4712c02c1c43dd88ee6b6d2
   patches:
     - fix-py3.12-removed-failIf.patch
     - fix-pypy-rebuild-backport.inc.patch
@@ -15,7 +15,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vvv
-  number: 8
+  number: 0
   skip: true  # [py==38]
 
 requirements:
@@ -34,7 +34,7 @@ requirements:
 test:
   imports:
     - sha3
-  source_files:  # [py<313]
+  source_files:   # [py<313]
     - tests.py  # [py<313]
     - vectors/  # [py<313]
   commands:
