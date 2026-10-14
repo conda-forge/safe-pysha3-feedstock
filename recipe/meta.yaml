@@ -9,7 +9,7 @@ source:
   url: https://github.com/5afe/pysha3/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 08754e97b1a576b849aec0821d6d9a8caf8dab0805274826d70117b12519694f
   patches:
-    - fix-py3.12-removed-failIf.patch
+    # - fix-py3.12-removed-failIf.patch
     - fix-pypy-rebuild-backport.inc.patch
     - fix-pypy-hashlib-not-ro.patch
 
